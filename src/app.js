@@ -26,6 +26,7 @@ mongoose.connect(mongodbURI)
   .then(db => {
     console.log('Connected to MongoDB');
   });
+  
   // enable cors
   const corsOption = {
     origin: true,
