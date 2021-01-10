@@ -26,7 +26,7 @@ mongoose.connect(mongodbURI)
   .then(db => {
     console.log('Connected to MongoDB');
   });
-  
+  // enable cors
   const corsOption = {
     origin: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
@@ -59,7 +59,7 @@ app.use((err, req, res, next) =>{
   res.status(err.status || 500);
   res.render('error');
 });
-// enable cors
+
 
 
 const port = process.env.PORT || 4000;
