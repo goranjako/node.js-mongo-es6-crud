@@ -1,7 +1,7 @@
 
 import express from 'express';
 import helmet from 'helmet';
-import cors from 'cors';
+//import cors from 'cors';
 import path from 'path';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
@@ -33,7 +33,7 @@ mongoose.connect(mongodbURI)
     credentials: true,
     exposedHeaders: ['x-auth-token']
   };
-  app.use(cors(corsOption));
+  //app.use(cors(corsOption));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -53,7 +53,7 @@ app.use((req, res, next) =>{
 app.use((err, req, res, next) =>{
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = req.app.get('env') === 'production' ? err : {};
 
   // render the error page
   res.status(err.status || 500);
