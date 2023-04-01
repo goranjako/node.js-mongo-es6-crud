@@ -15,7 +15,7 @@ let mongodbURI;
 if (process.env.NODE_ENV === 'test') {
   mongodbURI = process.env.MONGODB_TEST_URI;
 } else {
-  mongodbURI =" mongodb+srv://goranjako:YJLoMGbWYyC7UziL@cluster0.dhpclfp.mongodb.net/?retryWrites=true&w=majority";
+  mongodbURI =process.env.MONGODB_URI;
 }
 mongoose.Promise = global.Promise;
 mongoose.set('useCreateIndex', true);
